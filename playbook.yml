@@ -1,28 +1,16 @@
 ---
- - name: playbook_1.
-   hosts: all
-   vars_files:
-     - data.yml
-
-   vars_prompt: 
-     - name: B
-       prompt: "this is second vars_prompt"
-       private: no
-   vars:
-      A: "first playbook_1"    
-   tasks:
-     - name: task1
-       vars:
-           A: "hello"---
- - name: playbook_1
-   hosts: all
-       debug:
-           msg: "{{A}}"
-      - name: task2
-        vars:
-           B: "message"
-        debug:
-            msg: "{{B}}"
-...            
-               
-
+- name: playbook_1
+  hosts: all
+  vars:
+   a: "this is laptop"
+   b: "this is second laptop"
+  tasks:
+   -  name: task_1
+      vars:
+       a: "Hello world"
+      debug:
+        msg: "{{a}}"
+   -  name: task_2
+      debug:
+       msg: "{{b}}"
+...

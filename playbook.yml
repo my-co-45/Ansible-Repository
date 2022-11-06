@@ -1,6 +1,6 @@
 ---
 - name: playbook_1
-  hosts: all
+  hosts: localhosts
   vars:
    a: "this is laptop"
    b: "this is second laptop"

@@ -1,16 +1,10 @@
 ---
 - name: playbook_1
-  hosts: localhosts
+  hosts: localhost
   vars:
    a: "this is laptop"
-   b: "this is second laptop"
-  tasks:
+   tasks:
    -  name: task_1
-      vars:
-       a: "Hello world"
       debug:
         msg: "{{a}}"
-   -  name: task_2
-      debug:
-       msg: "{{b}}"
 ...

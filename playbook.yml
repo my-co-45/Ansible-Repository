@@ -1,10 +1,14 @@
 ---
- - name: loop
-   hosts: all
-   become: true
-   tasks:
-     - name: condition
-       debug:
-          msg: "{{ansible_nodename}}"
-       when: ansible_nodename=="ip-3-110-181-127" and ansible_os_family== "Debain"
+- name: playbook_1
+  hosts: all
+  vars:
+   a: "this is laptop"
+   b: "this is second laptop"
+  tasks:
+   -  name: task_1
+      debug:
+        msg: "{{a}}"
+   -  name: task_2
+      debug:
+       msg: "{{b}}"
 ...
